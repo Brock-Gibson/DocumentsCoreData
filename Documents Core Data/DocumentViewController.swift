@@ -67,5 +67,39 @@ class DocumentViewController: UITableViewController {
         }
         return cell
     }
+    
+    func deleteDocument(at indexPath: IndexPath) {
+        let document = documents[indexPath.row]
+        
+        if let managedContext = document.managedObjectContext {
+            managedContext.delete(document)
+            do {
+                try managedContext.save()
+                self.documents.remove(at: indexPath.row)
+                documentTableView.deleteRows(at: [indexPath], with: .automatic)
+            } catch {
+                print("Delete Failed")
+                
+                documentTableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteDocument(at: indexPath)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if let destination = segue.destination as? DocumentEditViewController ,
+            let row = documentTableView.indexPathForSelectedRow?.row{
+            destination.existingDocument = documents[row]
+        }
+    }
 }
 

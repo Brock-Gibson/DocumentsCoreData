@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5B289245221CD61700E341DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B289244221CD61700E341DB /* AppDelegate.swift */; };
-		5B289247221CD61700E341DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B289246221CD61700E341DB /* ViewController.swift */; };
-		5B28924A221CD61700E341DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B289248221CD61700E341DB /* Main.storyboard */; };
+		5B289247221CD61700E341DB /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B289246221CD61700E341DB /* DocumentViewController.swift */; };
 		5B28924D221CD61700E341DB /* Documents_Core_Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B28924B221CD61700E341DB /* Documents_Core_Data.xcdatamodeld */; };
 		5B28924F221CD61700E341DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B28924E221CD61700E341DB /* Assets.xcassets */; };
 		5B289252221CD61700E341DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B289250221CD61700E341DB /* LaunchScreen.storyboard */; };
 		5B28925D221CD61800E341DB /* Documents_Core_DataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28925C221CD61800E341DB /* Documents_Core_DataUITests.swift */; };
+		5B28926D221CDAC200E341DB /* Document+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28926B221CDAC200E341DB /* Document+CoreDataClass.swift */; };
+		5B28926E221CDAC200E341DB /* Document+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28926C221CDAC200E341DB /* Document+CoreDataProperties.swift */; };
+		5B289271221D0DD800E341DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B28926F221D0DD800E341DB /* Main.storyboard */; };
+		5B289273221D103B00E341DB /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B289272221D103B00E341DB /* DocumentTableViewCell.swift */; };
+		5B289275221D10B000E341DB /* DocumentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B289274221D10B000E341DB /* DocumentEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +33,7 @@
 /* Begin PBXFileReference section */
 		5B289241221CD61700E341DB /* Documents Core Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Documents Core Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B289244221CD61700E341DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B289246221CD61700E341DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B289249221CD61700E341DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B289246221CD61700E341DB /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		5B28924C221CD61700E341DB /* Documents_Core_Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Documents_Core_Data.xcdatamodel; sourceTree = "<group>"; };
 		5B28924E221CD61700E341DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B289251221CD61700E341DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +41,11 @@
 		5B289258221CD61800E341DB /* Documents Core DataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Documents Core DataUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B28925C221CD61800E341DB /* Documents_Core_DataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents_Core_DataUITests.swift; sourceTree = "<group>"; };
 		5B28925E221CD61800E341DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B28926B221CDAC200E341DB /* Document+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5B28926C221CDAC200E341DB /* Document+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Document+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5B289270221D0DD800E341DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../Documents/Documents/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B289272221D103B00E341DB /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
+		5B289274221D10B000E341DB /* DocumentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +87,17 @@
 		5B289243221CD61700E341DB /* Documents Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				5B28926B221CDAC200E341DB /* Document+CoreDataClass.swift */,
+				5B28926C221CDAC200E341DB /* Document+CoreDataProperties.swift */,
 				5B289244221CD61700E341DB /* AppDelegate.swift */,
-				5B289246221CD61700E341DB /* ViewController.swift */,
-				5B289248221CD61700E341DB /* Main.storyboard */,
+				5B289246221CD61700E341DB /* DocumentViewController.swift */,
+				5B28926F221D0DD800E341DB /* Main.storyboard */,
 				5B28924E221CD61700E341DB /* Assets.xcassets */,
 				5B289250221CD61700E341DB /* LaunchScreen.storyboard */,
 				5B289253221CD61700E341DB /* Info.plist */,
 				5B28924B221CD61700E341DB /* Documents_Core_Data.xcdatamodeld */,
+				5B289272221D103B00E341DB /* DocumentTableViewCell.swift */,
+				5B289274221D10B000E341DB /* DocumentEditViewController.swift */,
 			);
 			path = "Documents Core Data";
 			sourceTree = "<group>";
@@ -180,9 +192,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B289271221D0DD800E341DB /* Main.storyboard in Resources */,
 				5B289252221CD61700E341DB /* LaunchScreen.storyboard in Resources */,
 				5B28924F221CD61700E341DB /* Assets.xcassets in Resources */,
-				5B28924A221CD61700E341DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B289247221CD61700E341DB /* ViewController.swift in Sources */,
+				5B289247221CD61700E341DB /* DocumentViewController.swift in Sources */,
+				5B28926E221CDAC200E341DB /* Document+CoreDataProperties.swift in Sources */,
 				5B289245221CD61700E341DB /* AppDelegate.swift in Sources */,
+				5B289275221D10B000E341DB /* DocumentEditViewController.swift in Sources */,
+				5B28926D221CDAC200E341DB /* Document+CoreDataClass.swift in Sources */,
+				5B289273221D103B00E341DB /* DocumentTableViewCell.swift in Sources */,
 				5B28924D221CD61700E341DB /* Documents_Core_Data.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,20 +241,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B289248221CD61700E341DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B289249221CD61700E341DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B289250221CD61700E341DB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5B289251221CD61700E341DB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5B28926F221D0DD800E341DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B289270221D0DD800E341DB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
